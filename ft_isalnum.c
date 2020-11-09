@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalbrid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mdalbrid <mdalbrid@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 19:52:47 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/04 21:57:50 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/06 20:21:54 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/06 20:26:25 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int		ft_isalnum(int c)
 {
-	int p;
-
-	p = 0;
-	if (dstsize != 0)
-	{
-		while (src[p] != '\0')
-		{
-			dst[p] = src[p];
-			p++;
-		}
-	}
-	return (src);
+	if (c > 47 && c < 58 && c > 64 && c < 91 && c > 96 && c < 123)
+		return (c);
+	return (0);
 }
