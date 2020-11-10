@@ -3,20 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalbrid <mdalbrid@student.21-schoo>       +#+  +:+       +#+        */
+/*   By: mdalbrid <mdalbid@student.21-school>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/06 19:01:00 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/06 19:19:04 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/10 00:25:23 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/10 01:50:09 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void *ft_memset(void *b, int c, size_t len)
+void		*ft_memset(void *b, int c, size_t len)
 {
-	char *a = b;
+	unsigned char *y;
 
-	while (len--)
-		*a++ = c;
-	return b;
+	y = (unsigned char*)b;
+	while (len-- != 0)
+		y[len] = (unsigned char)c;
+	return (b);
 }

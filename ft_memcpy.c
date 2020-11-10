@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdalbrid <mdalbrid@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 19:22:55 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/10 01:17:15 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/10 01:58:14 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/10 04:06:13 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(const char *s)
+void		*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int p;
+	unsigned char		*a;
+	unsigned char		*b;
 
-	p = 0;
-	while (s[p] != '\0')
-		p++;
-	return (p);
+	a = (unsigned char*)dst;
+	b = (unsigned char*)src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while (n-- != 0)
+		*a++ = *b++;
+	return (dst);
 }

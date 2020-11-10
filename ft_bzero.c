@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalbrid <mdalbrid@student.21-schoo>       +#+  +:+       +#+        */
+/*   By: mdalbrid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 19:22:55 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/10 01:17:15 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/10 01:23:19 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/10 01:53:30 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t	ft_strlen(const char *s)
+void		ft_bzero(void *s, size_t n)
 {
-	int p;
+	unsigned char *y;
 
-	p = 0;
-	while (s[p] != '\0')
-		p++;
-	return (p);
+	y = (unsigned char*)s;
+	while (n-- != 0)
+		y[n] = 0;
 }

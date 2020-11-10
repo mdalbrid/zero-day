@@ -6,13 +6,13 @@
 /*   By: mdalbrid <mdalbrid@student.21-schoo>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 20:17:36 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/06 20:21:16 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/10 01:11:46 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (c);
+	if (c > -1 && c < 128)
+		return (1);
 	return (0);
 }
