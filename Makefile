@@ -4,13 +4,14 @@ SRCS	= ft_strlen.c ft_strlcpy.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isasci
 OBJS	= ${SRCS:.c=.o}
 
 NAME	= libft.a
+SONAME	= libft.so
 
 LIB		= ar rc
 
 CC		= gcc
 RM		= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror -std=c99
+CFLAGS	= -Wall -Wextra -Werror
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
@@ -24,6 +25,9 @@ clean:
 			${RM} ${OBJS}
 
 fclean:		clean
-			${RM} ${NAME}
+			${RM} ${NAME} ${SONAME}
 
 re:			fclean all
+
+so:
+			$(CC) -shared -o $(SONAME) $(OBJS) -lm
