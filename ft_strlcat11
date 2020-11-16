@@ -6,35 +6,41 @@
 /*   By: mdalbrid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 12:24:28 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/16 20:51:07 by mdalbrid         ###   ########lyon.fr   */
+/*   Updated: 2020/11/15 05:29:01 by mdalbrid         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
+#include <stddef.h>
+#include <stdio.h>
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t a;
-	size_t lnd;
-	size_t lns;
+	const char	*odst;
+	const char	*osrc;
+	size_t		n;
+	size_t		dlen;
 
-	a = 0;
-	lnd = ft_strlen(dst);
-	lns = ft_strlen(src);
-	if (dst == NULL && src == NULL)
-		return (0);
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	if (lnd >= dstsize)
-		return (ft_strlen(src) + dstsize);
-	while (*dst != '\0')
+	odst = dst;
+	osrc = src;
+	n = size;
+	while (n-- != 0 && *dst != '\0')
 		dst++;
-	while (*src != '\0' && a + lnd < dstsize - 1)
+	dlen = dst - odst;
+	printf("size %zu \n", dlen);
+	n = size - dlen;
+	if (n-- == 0)
+		return (dlen + ft_strlen(src));
+	while (*src != '\0')
 	{
-		*dst++ = *src++;
-		a++;
+		if (n != 0)
+		{
+			*dst++ = *src;
+			n--;
+		}
+		src++;
 	}
 	*dst = '\0';
-	return (lnd + lns);
+	return (dlen + (src - osrc));
 }
