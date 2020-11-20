@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalbrid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 19:52:47 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/06 22:13:44 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/20 20:10:52 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/20 20:11:24 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+
 #include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t p;
+	size_t	p;
 
 	p = 0;
 	if (dst == NULL && src == NULL)
@@ -23,10 +24,10 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	if (dstsize == 0)
 		return (ft_strlen(src));
 	while (*src != 0 && p < dstsize - 1)
-		{
-			*dst++ = *src++;
-			p++;
-		}
+	{
+		*dst++ = *src++;
+		p++;
+	}
 	*dst = '\0';
 	return (ft_strlen(src) + p);
 }

@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero2.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/20 19:43:24 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/20 19:44:46 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/16 21:02:04 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/20 20:15:07 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-void		ft_bzero(void *s, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char *y;
+	unsigned char	a;
+	char			*b;
 
-	y = (unsigned char*)s;
-	while (n-- != 0)
-		y[n] = 0;
+	a = (unsigned char)c;
+	b = (char*)s;
+	while (*b)
+		b++;
+	while (b >= s)
+	{
+		if (*b == a)
+			return (b);
+		b--;
+	}
+	return (NULL);
 }

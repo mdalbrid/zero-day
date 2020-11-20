@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero2.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/20 19:43:24 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/20 19:44:46 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/20 11:25:52 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/20 17:19:23 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <unistd.h>
 
-void		ft_bzero(void *s, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	unsigned char *y;
-
-	y = (unsigned char*)s;
-	while (n-- != 0)
-		y[n] = 0;
+	write(fd, &c, 1);
 }

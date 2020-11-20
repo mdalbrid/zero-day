@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero2.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/20 19:43:24 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/20 19:44:46 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/17 15:27:03 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/20 20:14:39 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
+#include "libft.h"
 
-void		ft_bzero(void *s, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char *y;
+	char	*b;
+	char	*l;
+	size_t	ll;
 
-	y = (unsigned char*)s;
-	while (n-- != 0)
-		y[n] = 0;
+	b = (char*)big;
+	l = (char*)little;
+	ll = ft_strlen(little);
+	if (*l == 0 || l == b)
+		return (b);
+	if (*b == 0)
+		return (NULL);
+	while (len-- && len > ll)
+	{
+		if (*b == *l)
+		{
+			if (ft_memcmp(b, l, ll) == 0)
+				return (b);
+		}
+		b++;
+	}
+	return (NULL);
 }

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdalbrid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 12:24:28 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/16 20:51:07 by mdalbrid         ###   ########lyon.fr   */
+/*   Updated: 2020/11/20 20:09:09 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t a;
 	size_t lnd;
@@ -24,8 +24,6 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 	lns = ft_strlen(src);
 	if (dst == NULL && src == NULL)
 		return (0);
-	if (dstsize == 0)
-		return (ft_strlen(src));
 	if (lnd >= dstsize)
 		return (ft_strlen(src) + dstsize);
 	while (*dst != '\0')
