@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 20:25:16 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/20 20:29:38 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/22 12:13:44 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif

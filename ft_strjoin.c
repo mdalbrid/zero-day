@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 15:23:27 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/22 11:58:15 by mdalbrid         ###   ########.fr       */
+/*   Created: 2020/11/22 11:58:45 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/23 01:43:14 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*st;
+	size_t	len;
 
-	if (s == NULL)
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	st = (char*)malloc(len + 1);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	st = (char*)malloc(len);
 	if (st == NULL)
 		return (NULL);
-	ft_strlcpy(st, &s[start], len + 1);
+	ft_strlcpy(st, s1, len + 1);
+	ft_strlcat(st, s2, len + 1);
 	return (st);
 }
