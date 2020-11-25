@@ -6,11 +6,10 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 10:46:24 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/20 20:08:48 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/25 17:26:10 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s)

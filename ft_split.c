@@ -1,93 +1,73 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_split1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdrinkin <pdrinkin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/18 16:06:30 by pdrinkin          #+#    #+#             */
-/*   Updated: 2020/11/19 20:40:26 by pdrinkin         ###   ########.fr       */
+/*   Created: 2020/11/25 21:02:00 by mdalbrid          #+#    #+#             */
+/*   Updated: 2020/11/25 21:03:20 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_count(char const *set, char n)
+int		ft_length(char *s, char c)
 {
-	int	count;
-	int	i;
+	int		len;
+	char	*a;
 
-	i = 0;
-	count = 0;
-	while (set[i] != '\0')
+	len = 0;
+	while (*s)
 	{
-		if (set[i] != n && (set[i + 1] == n || set[i + 1] == '\0'))
-			count++;
-		i++;
+		a = s + 1;
+		if (len == 0 && *s != c)
+			len++;
+		if (*s++ == c && *a != c && *a != '\0')
+			len++;
 	}
-	// printf("count: %d\n", count);
-	return (count);
+	return (len);
 }
 
-void	ft_start_end(char **word_array, char const *s, char n, int num_words)
+void	ft_item(char **array, char const *s, char c, int num)
 {
-	int len;
-	int i;
-	int start;
-	int array_index;
+	int		len;
+	int		p;
+	int		start;
+	int		i;
 
 	start = 0;
-	array_index = 0;
 	i = 0;
-	while (array_index < num_words)
+	p = 0;
+	while (i < num)
 	{
-		while (s[i] == n && s[i])
-			i++;
-		if (i == 0 || ((s[i] != n) && (s[i - 1] == n || s[i - 1] == '\0')))
-			start = i;
-		if (s[i + 1] == n || s[i + 1] == '\0')
+		while (s[p] == c && s[p])
+			p++;
+		if (p == 0 || ((s[p] != c) && (s[p - 1] == c || s[p - 1] == '\0')))
+			start = p;
+		if (s[p + 1] == c || s[p + 1] == '\0')
 		{
-			len = i - start + 1;
-			word_array[array_index] = ft_substr(s, start, len);
-			if (!(word_array[array_index] = ft_substr(s, start, len)))
-				return ;
-			array_index++;
+			len = p - start;
+			array[i] = ft_substr(s, p - len, len + 1);
+			if (array[i++] == NULL)
+				free(array);
 		}
-		i++;
+		p++;
 	}
+	array[i] = NULL;
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**word_array;
-	int		num_words;
+	char	**array;
+	int		num;
 
-	num_words = ft_count(s, c) + 1;
-	if (!(word_array = ft_calloc(num_words, sizeof(char*))))
-	ft_start_end(word_array, s, c, num_words);
-	return (word_array);
+	if (s == NULL)
+		return (NULL);
+	num = ft_length((char*)s, c);
+	array = malloc(sizeof(char*) * num + 1);
+	if (array == NULL)
+		return (NULL);
+	ft_item(array, s, c, num);
+	return (array);
 }
-/*
-int		main(void)
-{
-	char const *set;
-	char n;
-	char **word_array;
-	int num_words;
-	int i;
-
-	i = 0;
-	n = '|';
-	set = "split  ||this|for|me|||||!|";
-	num_words = ft_count(set, n);
-	//printf("num_words: %d\n", num_words);
-	word_array = (char **)malloc(sizeof(char*) * num_words + 1);
-	if (!word_array)
-		return (0);
-	word_array = ft_split(set, n);
-	//printf("%d\n",ft_start_end ()ft_count(set, n));
-	while (i < num_words +1)
-	printf("%s\n", word_array[i++]);
-}
-
-*/
