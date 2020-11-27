@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 21:02:00 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/25 21:03:20 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/26 06:19:19 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	**ft_split(char const *s, char c)
 	if (s == NULL)
 		return (NULL);
 	num = ft_length((char*)s, c);
-	array = malloc(sizeof(char*) * num + 1);
+	array = malloc(sizeof(char*) * (num + 1));
 	if (array == NULL)
 		return (NULL);
 	ft_item(array, s, c, num);

@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/22 11:58:45 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/23 01:43:14 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/26 23:59:18 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
+	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	st = (char*)malloc(len);
 	if (st == NULL)
 		return (NULL);
-	ft_strlcpy(st, s1, len + 1);
-	ft_strlcat(st, s2, len + 1);
+	ft_strlcpy(st, s1, len);
+	ft_strlcat(st, s2, len);
 	return (st);
 }

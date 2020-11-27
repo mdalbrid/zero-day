@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:20:01 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/24 16:26:51 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/26 02:43:43 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ int		end(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*r;
-	size_t	len;
+	char			*r;
+	unsigned int	len;
 
 	if (s1 == NULL)
 		return (NULL);
