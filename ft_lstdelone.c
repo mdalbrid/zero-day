@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:37:05 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/27 18:38:50 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:09:06 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (del)
 	{
-		del(lst -> content);
+		del(lst->content);
 		free(lst);
 	}
 }

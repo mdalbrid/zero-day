@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:39:05 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/27 18:41:50 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:08:58 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	any = *lst;
 	while (any)
 	{
-		temp = any -> next;
+		temp = any->next;
 		ft_lstdelone(any, del);
 		any = temp;
 	}

@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 17:48:12 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/27 18:23:01 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:09:36 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list *list;
 
-	if(!(list = malloc(sizeof(t_list))))
+	if (!(list = malloc(sizeof(t_list))))
 		return (NULL);
-	list -> content = content;
-	list -> next = NULL;
+	list->content = content;
+	list->next = NULL;
 	return (list);
 }

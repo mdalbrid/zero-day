@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:31:54 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/27 18:35:32 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:08:42 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	ab = *lst;
 	if (lst && *lst)
 	{
-		while (ab -> next != NULL)
-			ab = ab -> next;
-		ab -> next = new;
+		while (ab->next != NULL)
+			ab = ab->next;
+		ab->next = new;
 	}
 	else if (lst)
 		*lst = new;

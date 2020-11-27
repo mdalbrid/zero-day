@@ -6,7 +6,7 @@
 /*   By: mdalbrid <mdalbrid@student.21>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 18:26:36 by mdalbrid          #+#    #+#             */
-/*   Updated: 2020/11/27 18:28:33 by mdalbrid         ###   ########.fr       */
+/*   Updated: 2020/11/27 20:08:16 by mdalbrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_lstsize(t_list *lst)
 	p = 0;
 	while (lst)
 	{
-		lst = lst -> next;
+		lst = lst->next;
 		p++;
 	}
 	return (p);
