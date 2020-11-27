@@ -7,7 +7,12 @@ SRCS	= ft_strlen.c ft_strlcpy.c ft_isalpha.c ft_isdigit.c ft_isalnum.c	\
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c		\
 		ft_strjoin.c ft_strtrim.c ft_strmapi.c ft_itoa.c ft_split.c
 
+BONUS = ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c		\
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_lstnew.c
+
 OBJS	= $(SRCS:.c=.o)
+
+OBJSBONUS = $(BONUS:.c=.o)
 
 NAME	= libft.a
 
@@ -21,10 +26,13 @@ CFLAGS	= -Wall -Wextra -Werror
 $(NAME):	$(OBJS)
 			$(LIB) $(NAME) $(OBJS)
 
+bonus:		$(OBJS) $(OBJSBONUS)
+			$(LIB) $(NAME) $(OBJS) $(OBJSBONUS)
+
 all:		$(NAME)
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(OBJSBONUS)
 
 fclean:		clean
 			$(RM) $(NAME) $(SONAME)
